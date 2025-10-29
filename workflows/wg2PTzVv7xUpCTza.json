@@ -1,0 +1,94 @@
+{
+  "id": "wg2PTzVv7xUpCTza",
+  "name": "My workflow 3",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "566a26a6-8da6-4ac1-b434-34c6cbaf5738",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "631f1498-fb53-43e9-b13f-7e26a8e18187",
+              "name": "",
+              "value": "={{ $json }}",
+              "type": "string"
+            },
+            {
+              "id": "63badcdd-b462-4a40-b1dc-c09e738c67f4",
+              "name": "",
+              "value": "={{ 0 }}",
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        208,
+        0
+      ],
+      "id": "b0a19665-ccee-4f2b-816b-f3ec3e3dc3a1",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.debugHelper",
+      "typeVersion": 1,
+      "position": [
+        416,
+        0
+      ],
+      "id": "766d0803-6f32-492f-8829-e8e22d4b20f9",
+      "name": "DebugHelper"
+    }
+  ],
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "DebugHelper",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "triggerCount": 0,
+  "versionId": "529a9c4a-e568-4fb7-9eab-4f978dfcd57a",
+  "owner": {
+    "type": "personal",
+    "projectId": "HzUKPvO9EJlmiK0Y",
+    "projectName": "m a <mutasem@n8n.io>",
+    "personalEmail": "mutasem@n8n.io"
+  },
+  "parentFolderId": null,
+  "isArchived": false
+}
