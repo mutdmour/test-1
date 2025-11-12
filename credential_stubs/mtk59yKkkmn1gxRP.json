@@ -1,6 +1,6 @@
 {
   "id": "mtk59yKkkmn1gxRP",
-  "name": "GLOBAL OpenAi account test",
+  "name": "GLOBAL OpenAi account",
   "type": "openAiApi",
   "data": {
     "apiKey": ""
@@ -11,5 +11,5 @@
     "projectName": "owner a <mutasem@n8n.io>",
     "personalEmail": "mutasem@n8n.io"
   },
-  "isGlobal": true
+  "isGlobal": false
 }
