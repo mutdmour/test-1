@@ -1,0 +1,11 @@
+{
+  "id": "XWI6I4LpYhfdeEvH",
+  "name": "Action Network account",
+  "type": "actionNetworkApi",
+  "data": {},
+  "ownedBy": {
+    "type": "team",
+    "teamId": "0QOtsQlFuMCPgSys",
+    "teamName": "project"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "id": "jOnPTNFw1c4BpWom",
+  "name": "Second OpenAi account",
+  "type": "openAiApi",
+  "data": {
+    "apiKey": ""
+  },
+  "ownedBy": {
+    "type": "team",
+    "teamId": "0QOtsQlFuMCPgSys",
+    "teamName": "project"
+  }
+}

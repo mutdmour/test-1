@@ -1,16 +1,16 @@
 {
-  "id": "7jAzZ8z7w2iJWuGy",
-  "name": "My project",
+  "id": "0QOtsQlFuMCPgSys",
+  "name": "project",
   "icon": {
     "type": "icon",
     "value": "layers"
   },
-  "description": null,
+  "description": "",
   "type": "team",
   "owner": {
     "type": "team",
-    "teamId": "7jAzZ8z7w2iJWuGy",
-    "teamName": "My project"
+    "teamId": "0QOtsQlFuMCPgSys",
+    "teamName": "project"
   },
   "variableStubs": []
 }

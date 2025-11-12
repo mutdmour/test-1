@@ -1,0 +1,14 @@
+{
+  "id": "mtk59yKkkmn1gxRP",
+  "name": "GLOBAL OpenAi account",
+  "type": "openAiApi",
+  "data": {
+    "apiKey": ""
+  },
+  "ownedBy": {
+    "type": "personal",
+    "projectId": "jj1xH1xwQcQhPMue",
+    "projectName": "owner a <mutasem@n8n.io>",
+    "personalEmail": "mutasem@n8n.io"
+  }
+}
