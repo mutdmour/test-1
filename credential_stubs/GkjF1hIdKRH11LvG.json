@@ -1,0 +1,17 @@
+{
+  "id": "GkjF1hIdKRH11LvG",
+  "name": "Google Service Account account",
+  "type": "googleApi",
+  "data": {
+    "region": "",
+    "email": "",
+    "privateKey": ""
+  },
+  "ownedBy": {
+    "type": "personal",
+    "projectId": "FfubRiDIxBcz7kem",
+    "projectName": "m a <mutasem@n8n.io>",
+    "personalEmail": "mutasem@n8n.io"
+  },
+  "isGlobal": false
+}

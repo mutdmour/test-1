@@ -1,0 +1,15 @@
+{
+  "id": "KsGPuwvX4YSGr8IP",
+  "name": "SearXNG account",
+  "type": "searXngApi",
+  "data": {
+    "apiUrl": ""
+  },
+  "ownedBy": {
+    "type": "personal",
+    "projectId": "FfubRiDIxBcz7kem",
+    "projectName": "m a <mutasem@n8n.io>",
+    "personalEmail": "mutasem@n8n.io"
+  },
+  "isGlobal": false
+}

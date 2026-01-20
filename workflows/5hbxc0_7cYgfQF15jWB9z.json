@@ -1,0 +1,82 @@
+{
+  "id": "5hbxc0_7cYgfQF15jWB9z",
+  "name": "My workflow 42",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "206dff97-7000-4bd3-88ae-2dfb37dceefb",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        208,
+        0
+      ],
+      "id": "009dac2e-4ecc-49e5-a958-21a969739dec",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        416,
+        0
+      ],
+      "id": "b05ccd4a-f986-4931-b680-e57b4de4d1d1",
+      "name": "Edit Fields1"
+    }
+  ],
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "triggerCount": 0,
+  "versionId": "f3e608fd-3c6f-44d0-971f-c0aff9bfff41",
+  "owner": {
+    "type": "personal",
+    "projectId": "FfubRiDIxBcz7kem",
+    "projectName": "m a <mutasem@n8n.io>",
+    "personalEmail": "mutasem@n8n.io"
+  },
+  "parentFolderId": null,
+  "isArchived": false
+}
