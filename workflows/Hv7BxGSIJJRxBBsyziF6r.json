@@ -1,0 +1,37 @@
+{
+  "id": "Hv7BxGSIJJRxBBsyziF6r",
+  "name": "My workflow 47",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "webhook",
+        "options": {}
+      },
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "position": [
+        96,
+        -192
+      ],
+      "typeVersion": 1,
+      "id": "3b1d66a6-2043-4022-b52f-58011d6aebfe",
+      "webhookId": "279d90c1-d4b6-4981-9de8-62d07c85925a"
+    }
+  ],
+  "connections": {},
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "triggerCount": 0,
+  "versionId": "f169b846-63a7-482b-8920-4b5dd155238f",
+  "owner": {
+    "type": "personal",
+    "projectId": "FfubRiDIxBcz7kem",
+    "projectName": "m a <mutasem@n8n.io>",
+    "personalEmail": "mutasem@n8n.io"
+  },
+  "parentFolderId": null,
+  "isArchived": false
+}
