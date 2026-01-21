@@ -1,0 +1,283 @@
+{
+  "id": "3Znvkh-poq2rmrOy-XUmD",
+  "name": "My workflow 45",
+  "nodes": [
+    {
+      "parameters": {
+        "authentication": "serviceAccount",
+        "documentId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "1uyTMFCDaQhYE76OWPjGBz5oRBvZHsA7SjVxOOs-iBbk",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/14yeNCC9M7SHN0XG8hgXxCSh9rDkzg_ywIlu_GcZgUu8/edit?usp=drivesdk",
+          "cachedResultName": "Content Automation"
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "list",
+          "value": 727657925,
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1uyTMFCDaQhYE76OWPjGBz5oRBvZHsA7SjVxOOs-iBbk/edit#gid=727657925",
+          "cachedResultName": "Competitors"
+        },
+        "options": {
+          "dataLocationOnSheet": {
+            "values": {
+              "rangeDefinition": "detectAutomatically"
+            }
+          },
+          "outputFormatting": {
+            "values": {
+              "general": "UNFORMATTED_VALUE",
+              "date": "SERIAL_NUMBER"
+            }
+          }
+        }
+      },
+      "id": "46e6df26-d922-4d7e-9dda-dda222edc017",
+      "name": "Get competitors",
+      "type": "n8n-nodes-base.googleSheets",
+      "position": [
+        784,
+        224
+      ],
+      "typeVersion": 4.6,
+      "credentials": {
+        "googleApi": {
+          "id": "GkjF1hIdKRH11LvG",
+          "name": "Google Service Account account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "fieldsToAggregate": {
+          "fieldToAggregate": [
+            {
+              "fieldToAggregate": "LinkedIn URL"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "c74a6858-c04b-47cc-bd58-51e6eb528e97",
+      "name": "Aggregate",
+      "type": "n8n-nodes-base.aggregate",
+      "position": [
+        1216,
+        224
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "84d25dd4-7b9f-41e2-a176-4ef2efb41169",
+              "name": "LinkedIn URL",
+              "type": "string",
+              "value": "={{ $json['LinkedIn URL'] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "a767642f-7bbc-4b46-a382-6c0891b6a872",
+      "name": "Edit Fields1",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        1008,
+        224
+      ],
+      "typeVersion": 3.4
+    },
+    {
+      "parameters": {
+        "content": "# System 2: Content Discovery TEST\nScrape Viral Posts based on defined niche/keywords from LinkedIn.",
+        "height": 80,
+        "width": 2096,
+        "color": 5
+      },
+      "id": "42c14691-cd2e-4fa5-b0ab-a745ff432918",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -208,
+        80
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "compare": "selectedFields",
+        "fieldsToCompare": "idf",
+        "options": {}
+      },
+      "id": "eb24cf0f-c6b6-48a8-809f-92d78b5c8b2d",
+      "name": "Remove Duplicates",
+      "type": "n8n-nodes-base.removeDuplicates",
+      "position": [
+        1840,
+        336
+      ],
+      "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "inputSource": "passthrough"
+      },
+      "id": "51754b70-8e21-44e1-9c56-81f0f7661ac7",
+      "name": "Telegram trigger",
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "position": [
+        400,
+        352
+      ],
+      "typeVersion": 1.1
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "weeks",
+              "triggerAtDay": [
+                6
+              ],
+              "triggerAtHour": 23
+            }
+          ]
+        }
+      },
+      "id": "cb5a7e27-b25b-4890-9389-52426b156493",
+      "name": "Saturday 11 PM",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "position": [
+        368,
+        -240
+      ],
+      "typeVersion": 1.2
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "version": 2,
+            "leftValue": "",
+            "caseSensitive": true,
+            "typeValidation": "strict"
+          },
+          "combinator": "and",
+          "conditions": [
+            {
+              "id": "3d512620-530e-476e-9069-829c4f67e093",
+              "operator": {
+                "type": "number",
+                "operation": "gt"
+              },
+              "leftValue": "={{ $json.engagement.likes }}",
+              "rightValue": 100
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "c4c6f283-4264-4e54-a4e1-463bf1525c07",
+      "name": ">100 likes1",
+      "type": "n8n-nodes-base.filter",
+      "position": [
+        1584,
+        224
+      ],
+      "typeVersion": 2.2
+    }
+  ],
+  "connections": {
+    "Get competitors": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate": {
+      "main": [
+        [
+          {
+            "node": ">100 likes1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields1": {
+      "main": [
+        []
+      ]
+    },
+    "Telegram trigger": {
+      "main": [
+        [
+          {
+            "node": "Get competitors",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Saturday 11 PM": {
+      "main": [
+        [
+          {
+            "node": "Get competitors",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    ">100 likes1": {
+      "main": [
+        [
+          {
+            "node": "Remove Duplicates",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Remove Duplicates": {
+      "main": [
+        [
+          {
+            "node": ">100 likes1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "triggerCount": 0,
+  "versionId": "ab5c5624-fb2a-46ad-8db0-84162b2ac09c",
+  "owner": {
+    "type": "personal",
+    "projectId": "FfubRiDIxBcz7kem",
+    "projectName": "m a <mutasem@n8n.io>",
+    "personalEmail": "mutasem@n8n.io"
+  },
+  "parentFolderId": null,
+  "isArchived": false
+}
